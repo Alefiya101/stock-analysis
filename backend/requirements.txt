@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+pandas
+openpyxl
+scikit-learn
+supabase
+python-dotenv
+shap

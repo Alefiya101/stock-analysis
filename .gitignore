@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+.DS_Store
+
+# Diagnostics & Scratch
+backend/check_*.py
+backend/verify_data.py
+backend/test_upload.py
+backend/global_count.py
+backend/discover_symbols.py
+scratch/
+*.log
+
+# Large Datasets
+# If you want to keep your NSE data on GitHub, comment the line below
+input-dataset/
