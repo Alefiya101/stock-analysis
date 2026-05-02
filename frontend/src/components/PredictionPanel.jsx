@@ -10,7 +10,7 @@ import {
   HelpCircle
 } from 'lucide-react';
 
-const API_BASE = import.meta.env.DEV ? 'http://127.0.0.1:8000' : '';
+const API_BASE = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://127.0.0.1:8000' : '');
 
 const PredictionPanel = ({ symbol }) => {
   const [prediction, setPrediction] = useState(null);
