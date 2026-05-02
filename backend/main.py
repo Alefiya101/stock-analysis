@@ -85,9 +85,20 @@ async def get_prediction(symbol: str):
     return predict_7_days(df)
 
 
+import time
+
+CACHE = {
+    "top_picks": {"data": None, "timestamp": 0}
+}
+CACHE_TTL = 3600 # Cache for 1 hour
+
 @app.get("/top-picks")
 async def get_top_picks():
     """Ranks stocks by Smart Score and returns the top 3."""
+    global CACHE
+    if time.time() - CACHE["top_picks"]["timestamp"] < CACHE_TTL and CACHE["top_picks"]["data"] is not None:
+        return CACHE["top_picks"]["data"]
+
     symbols = get_all_symbols()
     rankings = []
 
@@ -108,6 +119,10 @@ async def get_top_picks():
 
     # Sort by score descending and take top 3
     top_3 = sorted(rankings, key=lambda x: x['score'], reverse=True)[:3]
+    
+    CACHE["top_picks"]["data"] = top_3
+    CACHE["top_picks"]["timestamp"] = time.time()
+    
     return top_3
 
 
