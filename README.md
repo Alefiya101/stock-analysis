@@ -57,15 +57,8 @@ To ensure the model is not a "black box," the system integrates **SHAP (SHapley 
   ├── /backend             # Intelligence & Data Layer
 ---
 
-## ☁️ Deployment on Render (Single Service / Monolith)
+## 🚀 Deployment Status
 
-This project is configured to run as a **Monolith**, meaning the FastAPI backend serves the React frontend. This allows you to stay on the **Render Free Tier** with just one service.
-
-### **Steps to Deploy:**
-1.  Connect your GitHub repo to **Render**.
-2.  Create a new **Web Service**.
-3.  **Build Command**: `./render-build.sh`
-4.  **Start Command**: `cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT`
-5.  **Environment Variables**: Add your `SUPABASE_URL` and `SUPABASE_KEY`.
+**Live on Render**
 
 ---
