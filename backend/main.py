@@ -38,7 +38,7 @@ def get_processed_df(symbol: str):
 
 # --- Routes ---
 
-@app.get("/")
+@app.get("/api/health")
 def read_root():
     return {
         "status": "online", 
