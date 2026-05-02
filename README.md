@@ -59,6 +59,8 @@ To ensure the model is not a "black box," the system integrates **SHAP (SHapley 
 
 ## 🚀 Deployment Status
 
-**Live on Render**
+**Live on Railway:** [https://stock-analysis-production-2f0d.up.railway.app/](https://stock-analysis-production-2f0d.up.railway.app/)
+
+The application uses a monolithic deployment strategy on Railway using a multi-stage Docker build, serving both the FastAPI backend and the React frontend from a single service.
 
 ---
