@@ -9,7 +9,7 @@ COPY frontend/ ./
 RUN npm run build
 
 # Stage 2: Build the FastAPI backend and serve the monolith
-FROM python:3.9-slim
+FROM python:3.9
 
 # Set the working directory to /code
 WORKDIR /code
